@@ -4,9 +4,9 @@
 import sys, pickle
 
 if __name__ == '__main__':
-    f=open(sys.argv[1],'rU')
-    wdata=open(sys.argv[1]+'.changes','w')
-    wshifts=open(sys.argv[1]+'.shifts','w')
+    f = open(sys.argv[1],'rU')
+    wdata = open(sys.argv[1]+'.changes','w')
+    wshifts = open(sys.argv[1] + '.shifts', 'w')
     # Dictionary of positions and their bases
     pos={}
     diff = {}
@@ -24,15 +24,17 @@ if __name__ == '__main__':
         except:
             break
         old.extend(old_line)
-        changes.extend(f.readline()[14:14+len(old_line)])#Can't split becasue it's possible for there to be two spaces in the content, which we don't want to split
+        changes.extend(f.readline()[14:14+len(old_line)])
+        #Can't split becasue it's possible for there to be two spaces 
+        #in the content, which we don't want to split
         new.extend(f.readline().split('  ')[-2].lstrip(' ').rstrip(' '))
         _ = f.readline()
-    
+
     for n, c in enumerate(changes):
         if c != '|':
             if old[n] == '-':
                 old_margin -= 1
-                shift+=1
+                shift += 1
                 shifts[n+1+old_margin]=shift
                 if old[n+1]=='-':
                     pass
