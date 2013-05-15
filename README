@@ -8,8 +8,8 @@ How to use:
 4. The new vcf should have the same name as the old one with .conv at the end
 
 Before use:
-Make sure that the vcf file contains only one chromosome and then (for now) edit the convert_vcf.py file on line 42 to say the chromosome you plan to convert.
-Also, if there are any bad cals or loci you wish to exclude, you can edit the convert_vcf.py file and add those poisiotns to the bad loci list on line 10.
+Make sure that the vcf file contains only one chromosome and then (for now) edit the convert_vcf.py file on line 22 to say the chromosome you plan to convert.
+Also, if there are any bad cals or loci you wish to exclude, you can edit the convert_vcf.py file and add those poisiotns to the bad loci list on line 68.
 
 Test:
 In the test folder, I have provided a very short, made up vcf file (test.vcf) to test some of the edge cases to go with the example blast output (hg19_to_rsrs.txt) Along with those are the intermediate files that go along with running the scripts and the final outpu (test.vcf.conv)
